@@ -1,6 +1,6 @@
 package uk.co.argon.common.datastructures.stack;
 
-import uk.co.argon.datastructures.linkedlist.SinglyLinkedList;
+import uk.co.argon.common.datastructures.linkedlist.SinglyLinkedList;
 
 public class Stack<T extends Comparable<T>> extends SinglyLinkedList<T> {
 	
