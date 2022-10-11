@@ -1,10 +1,16 @@
 package uk.co.argon.common.datastructures;
 
-public class CodingChallenge {
+public class CodingChallenge<T extends Comparable<T>> {
 
 	public static void main(String[] args) {
 		//System.out.println(encode("abcdefghijklmnopqrstuvwxyzzzz"));
-		c();
+		//c();
+		test();
+	}
+	
+	private static void test() {
+		Integer i = 15;
+		System.out.println(i.compareTo(16));
 	}
 	
 	private static int a(int i, int j) {

@@ -1,8 +1,12 @@
 package uk.co.argon.common.datastructures.queue;
 
+import java.util.PriorityQueue;
+
 import uk.co.argon.common.datastructures.linkedlist.SinglyLinkedList;
 
 public class Queue<T extends Comparable<T>> extends SinglyLinkedList<T> {
+	
+	java.util.Queue<String> q = new PriorityQueue<>();
 
 	public boolean queue(T data) {
 		add(data);
