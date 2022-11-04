@@ -13,13 +13,13 @@ public class TestLinkedList {
 	private static void sLL() {
 		LinkedList<Integer> ll = new SinglyLinkedList<>(77);
 
-		ll.add(1);
-		ll.add(9);
-		ll.add(15);
-		ll.add(20);
-		ll.add(32);
-		ll.add(47);
-		ll.add(63);
+		ll.queue(1);
+		ll.queue(9);
+		ll.queue(15);
+		ll.queue(20);
+		ll.queue(32);
+		ll.queue(47);
+		ll.queue(63);
 		System.out.println("Size: " + ll.size());
 		System.out.println(ll.toString());
 		
@@ -58,9 +58,9 @@ public class TestLinkedList {
 	private static void dLL() {
 		LinkedList<Integer> dll = new DoublyLinkedList<>();
 
-		dll.add(1);
-		dll.add(5);
-		dll.add(15);
+		dll.queue(1);
+		dll.queue(5);
+		dll.queue(15);
 		
 		System.out.println("List: " + dll.toString());
 		dll.addHead(25);
@@ -89,25 +89,25 @@ public class TestLinkedList {
 	private static void algotest() {
 		LinkedList<Integer> sll = new SinglyLinkedList<Integer>();
 		LinkedList<Integer> sll2 = new SinglyLinkedList<Integer>();
-		sll.add(1);
-		sll.add(2);
-		sll.add(1);
-		sll.add(3);
-		sll.add(2);
-		sll.add(1);
-		sll.add(9);
-		sll.add(15);
-		sll.add(20);
-		sll.add(32);
-		sll.add(47);
-		sll.add(63);
+		sll.queue(1);
+		sll.queue(2);
+		sll.queue(1);
+		sll.queue(3);
+		sll.queue(2);
+		sll.queue(1);
+		sll.queue(9);
+		sll.queue(15);
+		sll.queue(20);
+		sll.queue(32);
+		sll.queue(47);
+		sll.queue(63);
 
-		sll2.add(99);
-		sll2.add(88);
-		sll2.add(77);
-		sll2.add(4);
-		sll2.add(55);
-		sll2.add(11);
+		sll2.queue(99);
+		sll2.queue(88);
+		sll2.queue(77);
+		sll2.queue(4);
+		sll2.queue(55);
+		sll2.queue(11);
 		sll2.addNode(sll.getNode(7));
 		
 		sll.pivotList(9);

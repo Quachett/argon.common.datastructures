@@ -1,25 +1,10 @@
 package uk.co.argon.common.datastructures.queue;
 
-import java.util.PriorityQueue;
-
-import uk.co.argon.common.datastructures.linkedlist.SinglyLinkedList;
-
-public class Queue<T extends Comparable<T>> extends SinglyLinkedList<T> {
+public interface Queue<T> {
+	public boolean queue(T data);
+	public T poll();
+	public T peek();
+	public int size();
+	public boolean isEmpty();
 	
-	java.util.Queue<String> q = new PriorityQueue<>();
-
-	public boolean queue(T data) {
-		add(data);
-		return true;
-	}
-
-	public T poll() {
-		if(this.isEmpty())
-			return null;
-		return removeFirst();
-	}
-	
-	public T peek() {
-		return peekFirst();
-	}
 }

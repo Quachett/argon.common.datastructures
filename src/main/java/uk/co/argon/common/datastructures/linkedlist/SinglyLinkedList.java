@@ -10,7 +10,7 @@ public class SinglyLinkedList<T extends Comparable<T>> extends LinkedListUtil<T>
 	}
 
 	@Override
-	public void add(T data) {
+	public void queue(T data) {
 		if(super.isEmpty())
 			super.head = super.tail = new Node<>(data, null, null);
 		else {

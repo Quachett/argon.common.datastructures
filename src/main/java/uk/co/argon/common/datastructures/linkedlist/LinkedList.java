@@ -16,7 +16,7 @@ public interface LinkedList<T> extends Iterable<T> {
 	
 	public int size();
 	public boolean isEmpty();
-	public void add(T data);
+	public void queue(T data);
 	public void addNode(Node<T> node);
 	public void addHead(T data);
 	public void addAt(T data, int index);

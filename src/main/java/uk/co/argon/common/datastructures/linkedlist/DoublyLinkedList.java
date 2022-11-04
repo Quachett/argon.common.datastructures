@@ -10,7 +10,7 @@ public class DoublyLinkedList<T extends Comparable<T>> extends LinkedListUtil<T>
 	}
 
 	@Override
-	public void add(T data) {
+	public void queue(T data) {
 		if(isEmpty())
 			this.head = this.tail = new Node<>(data, null, null);
 		else {

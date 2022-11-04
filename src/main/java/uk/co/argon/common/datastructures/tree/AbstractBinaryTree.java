@@ -1,4 +1,4 @@
-package uk.co.argon.common.datastructures.binarytree;
+package uk.co.argon.common.datastructures.tree;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -51,10 +51,26 @@ public abstract class AbstractBinaryTree<T extends Comparable<T>> implements Tre
 			breathFirstTraversal(queue);
 		}
 	}
+
+	@Override
+	public boolean contains(T t) {
+		return contains(root, t);
+	}
+
+	private boolean contains(Node<T> node, T t) {
+		if(node == null)
+			return false;
+		else if(node.t.compareTo(t)==0)
+			return true;
+		else if(node.t.compareTo(t)<0) //element in tree is smaller than search element go right
+			return contains(node.right, t);
+		else
+			return contains(node.left, t);
+	}
 	
 	private void preorderTraversal(Node<T> node) {
 		if(node != null) {
-			System.out.print(node.elem + ", ");
+			System.out.print(node.t + ", ");
 			preorderTraversal(node.left);
 			preorderTraversal(node.right);
 		}
@@ -63,7 +79,7 @@ public abstract class AbstractBinaryTree<T extends Comparable<T>> implements Tre
 	private void inorderTraversal(Node<T> node) {
 		if(node != null) {
 			inorderTraversal(node.left);
-			System.out.print(node.elem + ", ");
+			System.out.print(node.t + ", ");
 			inorderTraversal(node.right);
 		}
 	}
@@ -72,14 +88,14 @@ public abstract class AbstractBinaryTree<T extends Comparable<T>> implements Tre
 		if(node != null) {
 			postorderTraversal(node.left);
 			postorderTraversal(node.right);
-			System.out.print(node.elem + ", ");
+			System.out.print(node.t + ", ");
 		}
 	}
 	
 	private void breathFirstTraversal(Queue<Node<T>> queue) {
 		Node<T> node = queue.poll();
 		if(node != null) {
-			System.out.print(node.elem + ", ");
+			System.out.print(node.t + ", ");
 			queue.add(node.left);
 			queue.add(node.right);
 		}
