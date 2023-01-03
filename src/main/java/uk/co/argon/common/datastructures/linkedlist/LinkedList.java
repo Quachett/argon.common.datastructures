@@ -12,6 +12,11 @@ public interface LinkedList<T> extends Iterable<T> {
 			this.next = next;
 			this.prev = prev;
 		}
+
+
+		public <T extends Comparable<E>> int compare(E o) {
+			return ((Comparable<E>) data).compareTo(o);
+		}
 	}
 	
 	public int size();

@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-public abstract class LinkedListUtil<T extends Comparable<T>> implements LinkedList<T> {
+public abstract class LinkedListUtil<T> implements LinkedList<T> {
 	
 	protected Node<T> head, tail = null;
 	protected int size = 0;
@@ -79,12 +79,12 @@ public abstract class LinkedListUtil<T extends Comparable<T>> implements LinkedL
 	}
 
 	@Override
-	public boolean contains(T data) {
+	public boolean contains(T t) {
 		if(isEmpty())
 			throw new RuntimeException(EMPTY);
 		Node<T> trav = this.head;
 		while(trav!=null) {
-			if(data.compareTo(trav.data)==0) 
+			if(trav.compare(t)==0) 
 				return true;
 			trav = trav.next;
 		}
@@ -145,14 +145,14 @@ public abstract class LinkedListUtil<T extends Comparable<T>> implements LinkedL
 	}
 
 	@Override
-	public void pivotList(T value) {
+	public void pivotList(T t) {
 		Node<T> trav = this.head;
-		int index = indexOf(value);
+		int index = indexOf(t);
 		int i=0;
 		
 		while(trav != null) {
 			T data = trav.data;
-			if(value.compareTo(trav.data)<=0) {
+			if(trav.compare(t)>=0) {
 				if(i<index) {
 					swap(i, index, data);
 					index--;
@@ -216,8 +216,8 @@ public abstract class LinkedListUtil<T extends Comparable<T>> implements LinkedL
 		return true;
 	}
 	
-	private void swap(int i, int index, T data) {
+	private void swap(int i, int index, T t) {
 		removeAt(i);
-		addAt(data, index);
+		addAt(t, index);
 	}
 }

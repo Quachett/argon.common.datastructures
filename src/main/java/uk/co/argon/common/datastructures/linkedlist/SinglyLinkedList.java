@@ -1,6 +1,6 @@
 package uk.co.argon.common.datastructures.linkedlist;
 
-public class SinglyLinkedList<T extends Comparable<T>> extends LinkedListUtil<T> {
+public class SinglyLinkedList<T> extends LinkedListUtil<T> {
 	
 	public SinglyLinkedList() {}
 	

@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class AbstractHeap<T extends Comparable<T>> implements Heap<T> {
+public abstract class AbstractHeap<T extends Comparable<? super T>> implements Heap<T> {
 	protected T[] heap;
 	protected int index;
 	protected int size;

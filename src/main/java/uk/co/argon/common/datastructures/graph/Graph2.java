@@ -8,8 +8,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Queue;
+//import java.util.Queue;
 import java.util.Set;
+
+import uk.co.argon.common.datastructures.queue.FifoQueue;
+import uk.co.argon.common.datastructures.queue.Queue;
 
 public class Graph2 {
 	public static void main(String...args) {
@@ -53,9 +56,9 @@ public class Graph2 {
 	
 	private static void shortestPath() {
 		Map<Character, List<Character>> graph = createGraph();
-		Queue<Entry<Character, Integer>> queue = new LinkedList<Entry<Character, Integer>>();
-		queue.add(Map.entry('w', 0));
-		System.out.println(shortestPath(graph, queue, new HashSet<>(), 'z'));
+		//Queue<Entry<Character, Integer>> queue = new LinkedList<Entry<Character, Integer>>();
+		Queue<Entry<Character, Integer>> q = new FifoQueue<>(Map.entry('w', 0));
+		System.out.println(shortestPath(graph, q, new HashSet<>(), 'z'));
 	}
 	
 	private static int shortestPath(Map<Character, List<Character>> graph, Queue<Entry<Character, Integer>> queue, Set<Character> set, Character end) {
@@ -68,7 +71,7 @@ public class Graph2 {
 			for(Character c: graph.get(e.getKey())) {
 				if(c==end)
 					return e.getValue()+1;
-				queue.add(Map.entry(c, e.getValue()+1));
+				queue.queue(Map.entry(c, e.getValue()+1));
 			}
 		}
 		

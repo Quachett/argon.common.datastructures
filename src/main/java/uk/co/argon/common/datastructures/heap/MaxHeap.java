@@ -4,7 +4,7 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Collection;
 
-public class MaxHeap<T extends Comparable<T>> extends AbstractHeap<T> {
+public class MaxHeap<T extends Comparable<? super T>> extends AbstractHeap<T> {
 	public MaxHeap(int maxSize, Class<T> clazz) {
 		super.maxSize = maxSize;
 		super.index = 0;

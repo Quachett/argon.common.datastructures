@@ -3,7 +3,7 @@ package uk.co.argon.common.datastructures.queue;
 import uk.co.argon.common.datastructures.linkedlist.LinkedList;
 import uk.co.argon.common.datastructures.linkedlist.SinglyLinkedList;
 
-public class FifoQueue<T extends Comparable<T>> implements Queue<T> {
+public class FifoQueue<T> implements Queue<T> {
 	
 	private LinkedList<T> ll = new SinglyLinkedList<>();
 	
